@@ -48,23 +48,19 @@
     }
   },
   "features": {
-    "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers-contrib/features/poetry:2": {},
-    "ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installOhMyZsh": true
     },
     "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
       "plugins": "git zsh-autosuggestions zsh-syntax-highlighting zsh-completions",
       "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zsh-users/zsh-syntax-highlighting.git https://github.com/zsh-users/zsh-completions.git"
-    },
-    "ghcr.io/devcontainers/features/python:1": {
-      "installTools": false
     }
   },
   "containerEnv": {
     "POETRY_VIRTUALENVS_IN_PROJECT": "true"
   },
-  "updateContentCommand": "poetry install && poetry run pre-commit install"
+  "postCreateCommand": "poetry install && [ -d .git ] && poetry run pre-commit install && poetry shell"
 }
