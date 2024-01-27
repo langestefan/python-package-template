@@ -62,5 +62,5 @@
   "containerEnv": {
     "POETRY_VIRTUALENVS_IN_PROJECT": "true"
   },
-  "postCreateCommand": "poetry install && [ -d .git ] && poetry run pre-commit install && poetry shell"
+  "postCreateCommand": "poetry install && [ -d .git ] && poetry run pre-commit install"
 }

@@ -163,6 +163,7 @@ ignore = [
   "Q002",
   "Q003",
   "W191",
+  "EXE002"
 ]
 
 [tool.ruff.flake8-pytest-style]
