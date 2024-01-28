@@ -15,3 +15,10 @@ class TestMyModule:
     def test_my_module(self, *, some_fixture: bool) -> None:
         """Test my module."""
         assert some_fixture
+
+    def test_main(self) -> None:
+        """Test main."""
+        # pylint: disable=import-outside-toplevel
+        from mypackage import __main__
+
+        __main__.main()
